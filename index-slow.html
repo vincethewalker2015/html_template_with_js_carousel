@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Here</title>
+<!--          Stylesheet                -->
+        <link rel="stylesheet" type="text/css"  href="css/slow.css">
+        <script type="text/javascript" src="js/script.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <!-- Bootstrap Library -->
+        
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        
+        
+        
+        
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
+        
+        <!-- Latest compiled JavaScript -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+  </head>
+  <body>
+      
+         <div align="center"><h1>Slower Moving Carousel</h1></div>
+              
+              <div class="slider" id="main-slider"><!-- outermost container element -->
+        	<div class="slider-wrapper"><!-- innermost wrapper element -->
+        	    <div class="slider-wrapper"><!-- innermost wrapper element -->
+        		<img src="img/cover.png" alt="First" class="slide" /><!-- slides -->
+        		<img src="img/lon.png" alt="Second" class="slide" />
+        		<img src="img/sunrise.png" alt="Third" class="slide" />
+	        </div>
+        	</div>
+        	<div class="slider-nav"><!-- "Previous" and "Next" actions -->
+        		<button class="slider-previous">Previous</button>
+        		<button class="slider-next">Next</button>
+        	</div>
+        </div>	
+
+    <script>
+        (function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			
+			this.actions();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		actions: function() {
+			var self = this;
+			self.next.addEventListener( "click", function() {
+				self.index++;
+				self.previous.style.display = "block";
+				
+				if( self.index == self.total - 1 ) {
+					self.index = self.total - 1;
+					self.next.style.display = "none";
+				}
+				
+				self._slideTo( self.index );
+				
+			}, false);
+			
+			self.previous.addEventListener( "click", function() {
+				self.index--;
+				self.next.style.display = "block";
+				
+				if( self.index == 0 ) {
+					self.index = 0;
+					self.previous.style.display = "none";
+				}
+				
+				self._slideTo( self.index );
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();
+    </script>
+      
+  </body>
+  
+  </html>
+    
+ 
