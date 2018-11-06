@@ -24,6 +24,9 @@ First, set the slideIndex to 1. (First picture)
     
 == To Use The JavaScript Carousel in index-slow.html   
     This has been set up to slde manualy by the user adjust where necessary
+    
+== To Use The JavaScript Carousel in crossfade.html 
+    This setup enables images to transition automaticaly
 
 
 Created by Vincent Walker https://www.vincethewalker.com

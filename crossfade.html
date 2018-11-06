@@ -5,7 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Title Here</title>
 <!--          Stylesheet                -->
-        <link rel="stylesheet" type="text/css"  href="css/transition.css">
+        <link rel="stylesheet" type="text/css"  href="css/crossfade.css">
         <script type="text/javascript" src="js/script.js"></script>
         <!-- Latest compiled and minified CSS -->
         <!-- Bootstrap Library -->
@@ -13,11 +13,7 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-        
-        
-        
-        
-        
+
         <!-- Popper JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
         
@@ -25,33 +21,12 @@
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
   </head>
   <body>
+      <div align="center"><h1>Crossfade</h1></div>
       
-       <div align="center"><h1>Carousel</h1></div>
-       <div class="col-md-4 col-md-offset-4 image-block" >
-          <img class="mySlides fade"  src="img/cover.png" style="width:100%">
-          <img class="mySlides fade" src="img/lon.png" style="width:100%">
-          <img class="mySlides fade" src="img/sunrise.png" style="width:100%">
+      <div id="cf">
+          <img class="mySlides bottom" src="img/cover.png" style="width:100%"/>
+          <img class="mySlides top" src="img/sunrise.png" style="width:100%"/>
         </div>
-
-    <script>
-        var myIndex = 0;
-        carousel();
-        
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-               x[i].style.display = "none";  
-            }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
-            x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 5000); // Change image every 6 seconds
-        }
-    
-    
-    </script>
-
+      
     
   </body>
- </html>
