@@ -1,7 +1,25 @@
-.mySlides {display:none;} 
+/*.mySlides {display:none;}  */
 
 .image-block {
     border: 3px solid black;
      padding: 2px;
 }
 
+/* Fading animation  */
+.fade {
+   -webkit-animation-name: fade;
+  -webkit-animation-duration: 6.5s;
+  animation-name: fade;
+  animation-duration: 6.5s;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .3} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .3} 
+  to {opacity: 1}
+}
